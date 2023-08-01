@@ -206,10 +206,15 @@ function getCorrectAnswer(questionIndex) {
       document.getElementById("timer").textContent = `Time Left: ${timeLimit}`;
       startTimer();
 	} else {
-	  document.getElementById("opt").remove();
-	  document.getElementById("ques").remove();
-	  document.getElementById("btn").remove();
-	  document.getElementById("timer").remove();
+
+      const submitButton = document.getElementById("btn");
+	  const timer = document.getElementById("timer");
+
+	  options.style.display = "none";
+	  question.style.display = "none";
+	  submitButton.style.display = "none";
+	  timer.style.display = "none";
+
 	  loadScore();
 	  stopTimer();
 	  displayReview();
@@ -240,10 +245,40 @@ function getCorrectAnswer(questionIndex) {
   loadQuestion();
   startTimer();
 
+  function addElementsBack() {
+	const options = document.getElementById("opt");
+	const question = document.getElementById("ques");
+	const submitButton = document.getElementById("btn");
+	const timer = document.getElementById("timer");
+  
+	options.style.display = "block";
+	question.style.display = "block";
+	submitButton.style.display = "block";
+	timer.style.display = "block";
+  }
+
   function reStart() {
-	window.location.href = "index.html";
+	const reviewContainer = document.getElementById("review");
+	const totalScore = document.getElementById("score");
+	const restartButton = document.getElementById("restart-btn");
+  
+	reviewContainer.innerHTML = ""; // Remove the review section
+	totalScore.textContent = ""; // Remove the score display
+	restartButton.style.display = "none"; // Hide the restart button
+  
+	currentQuestion = 0;
+	score = 0;
+	userAnswers = [];
+  
+	addElementsBack(); // Add back the removed elements
+  
+	loadQuestion(); // Start the quiz again
   }
   
+  function mainPage(){
+	window.location.href = "index.html";
+  }
+
   function loadScore() {
 	const totalScore = document.getElementById("score");
 	if(score<=1) 
@@ -252,6 +287,8 @@ function getCorrectAnswer(questionIndex) {
 	totalScore.textContent = `You scored ${score} out of ${Questions[selectedCategory].length}!Greate Job!`;
 	const btn = document.getElementById("restart-btn");
 	btn.style.display= "block";
+	const btn2 = document.getElementById("logout-btn");
+	btn2.style.display= "block";
   }
   
   function checkAns() {

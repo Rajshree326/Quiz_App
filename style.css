@@ -170,4 +170,22 @@ button:hover {
     background-color: #45a049;
   }
   
+  #logout-btn {
+    display: block;
+    width: 100px;
+    padding: 5px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-bottom: 10px;
+    margin-left: 140px;
+    text-align: center;
+  }
+  
+  #logout-btn:hover {
+    background-color: #45a049;
+  }
   
