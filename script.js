@@ -116,26 +116,32 @@ function getCorrectAnswer(questionIndex) {
 		choice.name = "answer";
 		choice.value = i;
   
-		choiceLabel.textContent = currentQuestionData.a[i].text;
+        choiceLabel.textContent = currentQuestionData.a[i].text;
+        choiceLabel.setAttribute("for", `option_${i}`);
   
 		choicesDiv.appendChild(choice);
 		choicesDiv.appendChild(choiceLabel);
 		options.appendChild(choicesDiv);
 	  }
+	  clearInterval(timerInterval);
+      document.getElementById("timer").textContent = `Time Left: ${timeLimit}`;
+      startTimer();
 	} else {
 	  document.getElementById("opt").remove();
 	  document.getElementById("ques").remove();
 	  document.getElementById("btn").remove();
 	  document.getElementById("timer").remove();
-	  stopTimer();
 	  loadScore();
+	  stopTimer();
 	  displayReview();
 	}
   }
   
   function startTimer() {
 	let timeLeft = timeLimit;
+    document.getElementById("timer").textContent = `Time Left: ${timeLeft}`;
 
+    clearInterval(timerInterval);
 	timerInterval = setInterval(() => {
 		timeLeft--;
 		document.getElementById("timer").textContent = `Time Left: ${timeLeft}`;
@@ -156,18 +162,14 @@ function getCorrectAnswer(questionIndex) {
   startTimer();
 
   function reStart() {
-	const button = document.createElement("button");
-	button.textContent = "Restart";
-	button.addEventListener("click", function () {
-	  window.location.href = "index.html";
-	});
-	document.body.appendChild(button);
+	window.location.href = "index.html";
   }
   
   function loadScore() {
 	const totalScore = document.getElementById("score");
 	totalScore.textContent = `You scored ${score} out of ${Questions[selectedCategory].length}`;
-	reStart();
+	const btn = document.getElementById("restart-btn");
+	btn.style.display= "block";
   }
   
   function checkAns() {
@@ -186,14 +188,14 @@ function getCorrectAnswer(questionIndex) {
 
         currentQuestion++;
         loadQuestion();
-		startTimer();
+		
     } else {
         console.log("Time's up! Submitting unanswered question.");
         userAnswers.push({ question: Questions[selectedCategory][currentQuestion].q, selectedAnswer: "Unanswered" });
 
         currentQuestion++;
         loadQuestion();
-		startTimer();
+	
     }
 }
   

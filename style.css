@@ -1,0 +1,173 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .panel {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+  }
+  
+  h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Login and Registration Forms */
+  #loginForm,
+  #registrationForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  }
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #007bff;
+  color: #fff;
+  border: 2px solid black;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+  
+  /* Quiz Category Selection */
+
+  .quesarea{
+    display: block;
+  }
+
+  #quizContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  label {
+    font-size: 18px;
+    margin-bottom: 10px;
+    align-content: center;
+  }
+  
+  select {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .options {
+    margin-top: 10px;
+    box-sizing: border-box;
+  }
+  
+  /* Each Option Div */
+  .options label {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  /* Radio Button Input */
+  .options input[type="radio"] {
+    display: block;
+    margin: 0 5px 0 0;
+    padding-top: 100px;
+  }
+  
+  /* Timer and Review Section */
+  #timer {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
+  
+  #review {
+    margin-bottom: 20px;
+    position: relative;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border-radius: 4px;
+    display: block;
+  }
+  
+  #review h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .question-review {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  
+  .question-review p {
+    margin: 5px 0;
+  }
+  
+  .question-review.correct {
+    background-color: #d4edda;
+  }
+  
+  .question-review.incorrect {
+    background-color: #f8d7da;
+  }
+  
+  /* Score Section */
+  #score {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  /* Restart Button */
+  #restart-btn {
+    display: block;
+    width: 100px;
+    padding: 5px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-bottom: 10px;
+    margin-left: 140px;
+    text-align: center;
+  }
+  
+  #restart-btn:hover {
+    background-color: #45a049;
+  }
+  
+  

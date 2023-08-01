@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
     <div class="panel">
+        
         <div class="question" id="ques"></div>
         <div class="options" id="opt"></div>
+        
         <div id="timer">Time Left: 0</div>
         <div id="review"></div>
         <button onclick="checkAns()" id="btn">SUBMIT</button>
         <div id="score"></div>
+        <div id="restart-btn" onclick="reStart()" style="display: none;">RESTART</div>
         <script src="script.js"></script>
     </div>
 </body>
