@@ -13,10 +13,30 @@ const Questions = {
 		{
 			q: "What is the capital of Jharkhand?",
 			a: [
-				{ text: "Gandhinagar", isCorrect: false },
-				{ text: "Surat", isCorrect: false },
 				{ text: "Ranchi", isCorrect: true },
-				{ text: "Mumbai", isCorrect: false }
+				{ text: "Surat", isCorrect: false },
+				{ text: "Ramgarh", isCorrect: false },
+				{ text: "Jamshedpur", isCorrect: false }
+			]
+		},
+
+		{
+			q: "Which of the following are called Key Industrial animals?",
+			a: [
+				{ text: "Producers", isCorrect: false },
+				{ text: "Tertiary consumers", isCorrect: false },
+				{ text: "Primary consumers", isCorrect: true },
+				{ text: "None of these", isCorrect: false }
+			]
+		},
+
+		{
+			q: "Forming of Association in India is",
+			a: [
+				{ text: "Legal Right", isCorrect: false },
+				{ text: "Illegal Right", isCorrect: false },
+				{ text: "Natural Right", isCorrect: false },
+				{ text: "Fundamental Right.", isCorrect: true }
 			]
 		},
 		
@@ -29,6 +49,36 @@ const Questions = {
 				{ text: "1914", isCorrect: false },
 				{ text: "1945", isCorrect: false },
 				{ text: "1941", isCorrect: false }
+			]
+		},
+
+		{
+			q: "In which year did World War II start?",
+			a: [
+				{ text: "1939", isCorrect: true },
+				{ text: "1914", isCorrect: false },
+				{ text: "1945", isCorrect: false },
+				{ text: "1941", isCorrect: false }
+			]
+		},
+
+		{
+			q: "The term Samantas is usually seen in the medieval history of India about",
+			a: [
+				{ text: "Artists", isCorrect: true },
+				{ text: "Big Landlords", isCorrect: false },
+				{ text: "Servants", isCorrect: false },
+				{ text: "Queens", isCorrect: false }
+			]
+		},
+
+		{
+			q: " Which of the given coins was known as 'Karshapana' in ancient literature?",
+			a: [
+				{ text: "Gold coins", isCorrect: true },
+				{ text: "Bronze coins", isCorrect: false },
+				{ text: "Punch marked coins", isCorrect: false },
+				{ text: "Iron coins", isCorrect: false }
 			]
 		},
 		
@@ -44,6 +94,35 @@ const Questions = {
 			]
 		},
 		
+		{
+			q: "Which of the given is a disease caused by protozoa?",
+			a: [
+				{ text: "Cancer", isCorrect: false },
+				{ text: "Typhoid", isCorrect: true },
+				{ text: "Kala-azar", isCorrect: false },
+				{ text: "Chicken Pox", isCorrect: false }
+			]
+		},
+
+		{
+			q: "The driving force of an ecosystem is",
+			a: [
+				{ text: "Carbon Mono oxide", isCorrect: false },
+				{ text: "Biogas", isCorrect: true },
+				{ text: "Solar Energy", isCorrect: false },
+				{ text: "Carbon dioxide", isCorrect: false }
+			]
+		},
+
+		{
+			q: "When the metal reacts with dilute acid, which gas is formed?",
+			a: [
+				{ text: "Carbon Dioxide", isCorrect: false },
+				{ text: "Helium", isCorrect: true },
+				{ text: "Neon", isCorrect: false },
+				{ text: "Hydrogen", isCorrect: false }
+			]
+		},
 	],
 };
   
