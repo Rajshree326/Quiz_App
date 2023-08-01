@@ -53,20 +53,20 @@ const Questions = {
 		},
 
 		{
-			q: "In which year did World War II start?",
+			q: "Who among the given had translated the Upanishads from Sanskrit to Persian",
 			a: [
-				{ text: "1939", isCorrect: true },
-				{ text: "1914", isCorrect: false },
-				{ text: "1945", isCorrect: false },
-				{ text: "1941", isCorrect: false }
+				{ text: "Dara Shukoh", isCorrect: true },
+				{ text: "Babar", isCorrect: false },
+				{ text: "Mirza Galib", isCorrect: false },
+				{ text: "Abul Fazal", isCorrect: false }
 			]
 		},
 
 		{
 			q: "The term Samantas is usually seen in the medieval history of India about",
 			a: [
-				{ text: "Artists", isCorrect: true },
-				{ text: "Big Landlords", isCorrect: false },
+				{ text: "Artists", isCorrect: false },
+				{ text: "Big Landlords", isCorrect: true },
 				{ text: "Servants", isCorrect: false },
 				{ text: "Queens", isCorrect: false }
 			]
@@ -75,9 +75,9 @@ const Questions = {
 		{
 			q: " Which of the given coins was known as 'Karshapana' in ancient literature?",
 			a: [
-				{ text: "Gold coins", isCorrect: true },
+				{ text: "Gold coins", isCorrect: false },
 				{ text: "Bronze coins", isCorrect: false },
-				{ text: "Punch marked coins", isCorrect: false },
+				{ text: "Punch marked coins", isCorrect: true },
 				{ text: "Iron coins", isCorrect: false }
 			]
 		},
@@ -98,8 +98,8 @@ const Questions = {
 			q: "Which of the given is a disease caused by protozoa?",
 			a: [
 				{ text: "Cancer", isCorrect: false },
-				{ text: "Typhoid", isCorrect: true },
-				{ text: "Kala-azar", isCorrect: false },
+				{ text: "Typhoid", isCorrect: false },
+				{ text: "Kala-azar", isCorrect: true },
 				{ text: "Chicken Pox", isCorrect: false }
 			]
 		},
@@ -108,8 +108,8 @@ const Questions = {
 			q: "The driving force of an ecosystem is",
 			a: [
 				{ text: "Carbon Mono oxide", isCorrect: false },
-				{ text: "Biogas", isCorrect: true },
-				{ text: "Solar Energy", isCorrect: false },
+				{ text: "Biogas", isCorrect: false },
+				{ text: "Solar Energy", isCorrect: true },
 				{ text: "Carbon dioxide", isCorrect: false }
 			]
 		},
@@ -118,9 +118,9 @@ const Questions = {
 			q: "When the metal reacts with dilute acid, which gas is formed?",
 			a: [
 				{ text: "Carbon Dioxide", isCorrect: false },
-				{ text: "Helium", isCorrect: true },
+				{ text: "Helium", isCorrect: false },
 				{ text: "Neon", isCorrect: false },
-				{ text: "Hydrogen", isCorrect: false }
+				{ text: "Hydrogen", isCorrect: true }
 			]
 		},
 	],
@@ -246,7 +246,10 @@ function getCorrectAnswer(questionIndex) {
   
   function loadScore() {
 	const totalScore = document.getElementById("score");
-	totalScore.textContent = `You scored ${score} out of ${Questions[selectedCategory].length}`;
+	if(score<=1) 
+	totalScore.textContent = `You scored ${score} out of ${Questions[selectedCategory].length}!Try Again!`;
+	else
+	totalScore.textContent = `You scored ${score} out of ${Questions[selectedCategory].length}!Greate Job!`;
 	const btn = document.getElementById("restart-btn");
 	btn.style.display= "block";
   }
