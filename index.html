@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+</head>
+ 
+<body>
+    <div class="panel">
+        <h1>Quiz Application Using JavaScript</h1>
+
+        <div id="loginForm">
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="login()">Log In</button>
+            <button onclick="showRegistration()">Register</button>
+        </div>
+
+        <div id="registrationForm" style="display: none;">
+            <input type="text" id="newUsername" placeholder="New Username">
+            <input type="password" id="newPassword" placeholder="New Password">
+            <button onclick="createUser()">Create User</button>
+            <button onclick="hideRegistration()">Cancel</button>
+        </div>
+        
+        <div id="quizContent" style="display: none;">
+        <label for="category">Choose a Category:</label>
+        <select id="category">
+            <option value="general">General Knowledge</option>
+            <option value="history">History</option>
+            <option value="science">Science</option>
+        </select>
+        <button onclick="startQuiz()" id="btn">Start Quiz</button>
+        </div>
+
+        <script>
+            
+            function getUsersData() {
+                return JSON.parse(localStorage.getItem("users")) || [];
+            }
+
+            function saveUsersData(users) {
+                localStorage.setItem("users", JSON.stringify(users));
+            }
+            
+            const users = getUsersData();
+            
+            let currentUser = null;
+
+            function login() {
+                const username = document.getElementById("username").value;
+                const password = document.getElementById("password").value;
+
+                const user = users.find(user => user.username === username && user.password === password);
+
+                if (user) {
+                    currentUser = user;
+                    document.getElementById("loginForm").style.display = "none";
+                    document.getElementById("registrationForm").style.display = "none";
+                    document.getElementById("quizContent").style.display = "block";
+                } else {
+                    alert("Invalid username or password. Please try again.");
+                }
+            }
+
+            function showRegistration() {
+                document.getElementById("loginForm").style.display = "none";
+                document.getElementById("registrationForm").style.display = "block";
+            }
+            
+            function createUser() {
+                const newUsername = document.getElementById("newUsername").value;
+                const newPassword = document.getElementById("newPassword").value;
+
+                if (newUsername && newPassword) {
+                    const newUser = { username: newUsername, password: newPassword, scores: {} };
+                    users.push(newUser);
+                    saveUsersData(users); // Save updated user data
+
+                    alert("User created successfully!");
+                    document.getElementById("newUsername").value = "";
+                    document.getElementById("newPassword").value = "";
+
+                    hideRegistration();
+                } else {
+                    alert("Please enter both a username and password.");
+                }
+            }
+
+
+            function hideRegistration() {
+                document.getElementById("loginForm").style.display = "block";
+                document.getElementById("registrationForm").style.display = "none";
+            }
+
+            document.getElementById("btn").addEventListener("click", function() {
+                const categorySelect = document.getElementById("category");
+                const selectedCategory = categorySelect.value;
+                window.location.href = `quiz.html?category=${selectedCategory}`;
+        });
+        
+        </script>
+    </div>
+ 
+</body>
+ 
+</html>
