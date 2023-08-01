@@ -261,11 +261,13 @@ function getCorrectAnswer(questionIndex) {
 	const reviewContainer = document.getElementById("review");
 	const totalScore = document.getElementById("score");
 	const restartButton = document.getElementById("restart-btn");
-  
+	const logoutButton = document.getElementById("logout-btn");
+    
 	reviewContainer.innerHTML = ""; // Remove the review section
 	totalScore.textContent = ""; // Remove the score display
 	restartButton.style.display = "none"; // Hide the restart button
-  
+    logoutButton.style.display = "none";
+	
 	currentQuestion = 0;
 	score = 0;
 	userAnswers = [];
